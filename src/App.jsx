@@ -1,33 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Register from'./Pages/Register';
+import Login from'./Pages/Login';
+import Dashboard from'./Pages/Dashboard';
 
-const AppFunction = () => {
-return(
-  <div class="container" id="container">
-    <div class="registration form">
-      <form>
-        <h1>Registration Form</h1>
-        <input type="text"
-        placeholder="Name"
-        required id="Text"></input>
-        <input type="email"
-        placeholder="Email"
-        required id="Email"></input>
-        <input type="text"
-        placeholder="Password"
-        required id="Password"></input>
-        <input type="text"
-        placeholder="Confirm Password"
-        required></input>
-        <input type="tel"
-        placeholder="Phone No."
-        maxLength={11} required id="Telephone"></input>
-        <button>Register</button>
-      </form>
-    </div>
-  </div>
-)
-}
-export default AppFunction
+
+const App = () => {
+  return (
+      <Router>
+          <Routes>
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Register" element={<Register />} />
+              <Route path="/Dashboard" element={<Dashboard />} />
+          </Routes>
+      </Router>
+  );
+};
+
+export default App;
